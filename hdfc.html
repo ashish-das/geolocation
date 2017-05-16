@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+<script>
+	$(document).ready(function(){
+	$.ajax({
+	   type: "POST",
+	   url: "http://app.mapmyindia.com/hdfcweb/mmiFacade.do",
+	   data: {
+	    where:"Hyderabad,Telangana",
+	     radius:"10",
+	     stype:"atm",
+	     act:"nearby",
+	     bound:"null",
+	     loc_x:"na",
+	     loc_y:"na",
+	     poi_id:"null"
+		 },
+		success: function(data){
+			if(data.length<=0)
+			{
+				
+				window.top.close();
+			}
+		alert(data);
+		 // $("#locatorStr").val(data);
+			// //    alert($("#locatorStr").val());
+			// 		$("#frm").submit();
+					
+	   }
+	})
+	 //var data = "test";
+				   
+	});
+	</script>
